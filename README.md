@@ -1,4 +1,4 @@
-getyourgulpon
+Get your gulp on
 =============
 
-gulp repository for presentation
+Simple repository for showing users how to use gulp, with a simple web site
