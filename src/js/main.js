@@ -2,13 +2,12 @@
     'use strict';
 
     function ready(){
-        document.removeElementListener('DOMContentLoaded', ready);
-        window.removeElementListener('load', ready);
+        document.removeEventListener('DOMContentLoaded', ready, false);
+        window.removeEventListener('load', ready, false);
 
-        var fancyEl = document.querySelectorAll('.fancy');
-        fancyEl.innerText = fancyText();
+        var ribbons = new Ribbons();
     }
 
-    document.addEventListener('DOMContentLoaded', ready);
-    window.addEventListener('load', ready);
+    document.addEventListener('DOMContentLoaded', ready, false);
+    window.addEventListener('load', ready, false);
 })();

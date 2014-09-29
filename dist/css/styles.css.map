@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.css","names":[],"mappings":"","sources":["styles.css"],"sourcesContent":["body {\n  background: #000000;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n}\ncanvas {\n  position: absolute;\n  top: 0;\n  left: 0;\n}\nh1 {\n  color: #ffffff;\n  position: absolute;\n  z-index: 100;\n  margin-left: 20px;\n}\n"],"sourceRoot":"/source/"}
