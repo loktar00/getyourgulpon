@@ -5,15 +5,16 @@
         this.canvas     = document.querySelector('canvas');
         this.ctx        = this.canvas.getContext('2d');
         this.width      = window.innerWidth;
-        this.height     = window.innerHeight;
+        this.height     = 600;
 
         this.canvas.width = this.width;
         this.canvas.height = this.height;
 
-        this.cycle = 6.8;
+        this.cycle = 12.8;
         this.angleY = 0;
         this.offset = -80;
-        this.offsetY = this.height/4;
+        this.offsetY = 100;
+        this.ribbonCount = 0;
         this.radius = 10;
 
         this.points = this.update();
@@ -21,7 +22,7 @@
         this.lastMorph = 0;
         this.morphDelay = 1000;
 
-        this.ctx.fillStyle = "rgba(0,0,0,0.1)";
+        this.ctx.fillStyle = "rgba(255,255,255,0.001)";
         this.ctx.strokeStyle = colorCycle(this.cycle);
         this.ctx.globalCompositeOperation = "lighter";
 
@@ -54,6 +55,7 @@
                 if (this.offset > this.width + 100) {
                     this.offset = -80;
                     this.offsetY += 80;
+                    this.ribbonCount++;
                     this.ctx.strokeStyle = colorCycle(this.cycle+=3);
                 }
                 
@@ -88,12 +90,14 @@
         render : function(){
             var that = this;
             
-            for(var i = 0; i < 5; i++){
+            for(var i = 0; i < 18; i++){
                 this.ribbonAnimation();
             }
 
             requestAnimationFrame(function(){
-                that.render();
+                if(that.ribbonCount < 2){
+                    that.render();
+                }
             });
         }
     };

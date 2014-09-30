@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>gulp demo app</title>
-		<link rel="stylesheet" href="css/styles.css">
-	</head>
-	<body>
-		<h1>Sample gulp site</h1>
-		<canvas></canvas>
-		<script src="js/app.min.js"></script>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+    <title>Some random website</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <canvas></canvas>
+    <header class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Sample gulp site</h1>
+            </div>
+        </div>
+        <nav>
+            <ol>
+                <li><a href="#">Some Link</a></li>
+                <li><a href="#">Stuff</a></li>
+                <li><a href="#">More stuff</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main class="container" role="main">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Some random heading</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore iusto sit voluptatum aperiam beatae non molestias enim, veniam asperiores, molestiae, neque soluta porro explicabo architecto atque nobis. Ab, eius, sequi!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam perspiciatis eaque aut nemo impedit quis odio eligendi sequi magni. Delectus iusto veniam libero cumque enim minus molestias dolor aut recusandae.</p>
+                     
+<pre>
+<code>(function(){
+    'use strict';
+
+    function ready(){
+        document.removeEventListener('DOMContentLoaded', ready, false);
+        window.removeEventListener('load', ready, false);
+
+        var ribbons = new Ribbons();
+    }
+
+    document.addEventListener('DOMContentLoaded', ready, false);
+    window.addEventListener('load', ready, false);
+})();</code>
+</pre>    
+
+                <h3>Another heading</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore iusto sit voluptatum aperiam beatae non molestias enim, veniam asperiores, molestiae, neque soluta porro explicabo architecto atque nobis. Ab, eius, sequi!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam perspiciatis eaque aut nemo impedit quis odio eligendi sequi magni. Delectus iusto veniam libero cumque enim minus molestias dolor aut recusandae.</p>
+            </div>
+        </div>
+    </main>
+    <footer >
+         <div class="container row">
+            <div class="col-sm-12">
+                Footer content
+                <ol>
+                    <li><a href="#">Some Link</a></li>
+                    <li><a href="#">Stuff</a></li>
+                    <li><a href="#">More stuff</a></li>
+                </ol>
+            </div>
+        </div>
+    </footer>
+    <script src="js/app.min.js"></script>
+</body>
 </html>

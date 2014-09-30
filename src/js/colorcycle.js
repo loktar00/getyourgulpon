@@ -8,7 +8,7 @@
         var r = Math.floor(Math.sin(0.3 * cycle + offset + 0) * 127 + 128),
             g = Math.floor(Math.sin(0.3 * cycle + offset + 2) * 127 + 128),
             b = Math.floor(Math.sin(0.3 * cycle + offset + 4) * 127 + 128),
-            a = 0.1;
+            a = 0.025;
         return "rgba(" + r + "," + g + "," + b + "," + a + ")";
     };
 })(this);

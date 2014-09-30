@@ -2,6 +2,7 @@ var gulp        = require('gulp'),
     connect     = require('gulp-connect'),
     less        = require('gulp-less'),
     cssmin      = require('gulp-cssmin'),
+    uncss       = require('gulp-uncss'),
     concat      = require('gulp-concat'),
     lint        = require('gulp-jshint'),
     uglify      = require('gulp-uglify'),
@@ -48,18 +49,28 @@ gulp.task('css', function(){
         console.log(err.toString());
         this.emit('end');
     })
-    // source map init
-    .pipe(sourcemaps.init())
-        // combine them all into one css
-        .pipe(rename('styles.css'))
-        // minify the css
-        .pipe(cssmin())
-     // create the sourcemaps
-    .pipe(sourcemaps.write('./'))
+    .pipe(rename('styles.css'))
     // save the css file to the destination
     .pipe(gulp.dest('./dist/css/'))
-    // reload the page.
+});
+
+// uncss task
+gulp.task('optimizecss', ['css'], function(){
+    return gulp.src('./dist/css/styles.css')
+    // rip out all unused css by rendering index.html and seeing what classes are used
+    .pipe(uncss({
+        html: ['dist/index.html']
+    }))
+    // source map init
+    .pipe(sourcemaps.init())
+        // min the css
+        .pipe(cssmin())
+    // write out the source maps
+    .pipe(sourcemaps.write('./'))
+    // save the file
+    .pipe(gulp.dest('./dist/css/'))
     .pipe(connect.reload());
+
 });
 
 // markup task

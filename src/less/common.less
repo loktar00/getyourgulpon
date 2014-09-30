@@ -1,17 +1,102 @@
 body {
-    background:@background-color;
-    overflow:hidden;
+    font-family: 'Open Sans', sans-serif;
+    background:url(../images/cream_pixels.png);
     margin:0;
     padding:0;
+    color: @text-color;
+    font-size:2rem;
+    line-height: 1.8;
+    overflow-x: hidden;
+    min-height: 100%;
 }
 canvas {
     position: absolute;
     top:0;
     left:0;
+    z-index: -1;
+}
+
+h1, h2, h3, h4{
+    font-weight: 700;
+    margin:2rem 0;
 }
 h1{
-	color: @text-color;
-	position: absolute;
-	z-index:100;
-	margin-left:20px;
+    font-size: 6rem;
+    text-transform: uppercase
+}
+h2{
+  font-size: 4rem;  
+}
+h3{
+  font-size: 3rem;  
+}
+h4{
+  font-size: 2rem;  
+}
+
+header, nav, main, footer{
+    margin-top:50px;
+}
+header{
+    text-align: center;
+    padding-bottom:20px;
+    border-bottom: 5px solid #010101;
+}
+
+a{
+    color: @link-color;
+    &:hover{
+        color: @link-color;
+        text-decoration: none;
+        border-bottom:1px dotted @link-color;
+    }
+}
+
+nav{    
+    margin:1rem;
+    ol{
+        .list-unstyled;
+    }
+    li{
+        display:inline-block;
+        margin:0 .5rem;
+    }
+    a{
+        font-size: .8em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+footer{
+    text-align: center;
+    background: @footer-background;
+    color: @footer-text;
+    padding: 20px 0;
+    border-top:5px solid lighten(@link-color, 20%);
+    ol{
+        .list-unstyled;
+    }
+    li{
+        display:inline-block;
+        margin:0 .5rem;
+    }
+    a{
+        font-size: 1.5rem;
+        color: lighten(@link-color, 50%);
+        &:hover{
+            color: lighten(@link-color, 50%);
+            text-decoration: none;
+            border-bottom:1px dotted @footer-text;
+        }
+    }
+}
+pre{
+    padding:20px;
+    font-size:1.6rem;
+}
+code{
+    font-family: monospace, serif;
+    display:inline;
+    width:auto;
 }
