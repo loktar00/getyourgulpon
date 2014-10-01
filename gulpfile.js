@@ -52,6 +52,7 @@ gulp.task('css', function(){
     .pipe(rename('styles.css'))
     // save the css file to the destination
     .pipe(gulp.dest('./dist/css/'))
+    .pipe(connect.reload());
 });
 
 // uncss task
@@ -70,7 +71,6 @@ gulp.task('optimizecss', ['css'], function(){
     // save the file
     .pipe(gulp.dest('./dist/css/'))
     .pipe(connect.reload());
-
 });
 
 // markup task
@@ -93,7 +93,7 @@ gulp.task('webserver', function(){
 });
 
 // Our watcher task, has a dependency on html, javascript, css, meaning it will run these tasks before it initially starts
-gulp.task('watch', ['html', 'javascript', 'optimizecss'], function() {
+gulp.task('watch', ['html', 'javascript', 'css'], function() {
     // setup the css watcher and watch for any changes to the less files
     var cssWatcher = gulp.watch(['./src/less/**/*.less'], ['css']);
         cssWatcher.on('change', function (event) {
